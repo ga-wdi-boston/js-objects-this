@@ -1,14 +1,14 @@
 ![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)
 
-## Objectives
-
--   Using `this` to refer to object properties from within a method.
--   Use `this` to create a constructor function.
+# JavaScript Objects: Referencing Own Properties
 
 ## Prerequisites
 
 -   Creating object literals.
 
+## Objectives
+
+-   From within a method, reference properties of the same object using `this`.
 
 ## `this`
 
@@ -17,6 +17,7 @@
 As you might have gathered from the last lab, one way to break up the complexity of a problem is by using multiple kinds of objects together, and having each object be responsible for representing a small part of the problem. But these objects don't need to exist in isolation - objects can have other objects (or even collections of other objects) as properties.
 
 Suppose that we wanted to create a simple app ('RunTracker') that helps people prepare for running a 5k. Each day that a person runs, they create a record of their run which contains
+
 - the date and time of the run
 - the distance covered, in meters
 - the time taken, in seconds
