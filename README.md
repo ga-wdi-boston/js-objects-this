@@ -8,108 +8,146 @@
 
 ## Objectives
 
+-   Contrast the defintions of "property", "attribute", and "method"
 -   From within a method, reference properties of the same object using `this`.
+
+## Kinds of Properties
+
+Suppose we have the following object literal:
+
+```js
+{
+  foo: 'bar',
+  baz: function() {
+    // How to I access the value stored in 'foo' above?
+  }
+}
+```
+
+`foo` and `baz` are both **properties**, also known as keys. We typically use
+the term "keys" when object literals are used as dictionaries. When we mix data
+and methods, we should prefer the term "object" over "dictionary". So, we'll
+also call the accessor name a "property" instead of a "key".
+
+`foo` is a kind of property known as an **attribute**. Attributes are properties
+point to values. On the other hand, properties that point to functions are
+**methods**.
+
+For the remainder of this talk, we will be focusing exclusively on how we can
+use `this` inside of a method to point to value defined elsewhere in an object
+literal. All other uses of `this` are out-of-scope.
+
+The answer to the question posed in the previous code snippet is that we use
+`this` to refer to the object's own properties. That is to say, when we use
+`this` inside a method, that method is contained within an object. For the
+patterns used in this talk, the containing object is what `this` refers to.
+
+```js
+{
+  foo: 'bar',
+  baz: function() {
+    return this.foo;
+  }
+}
+```
+
+*Do not over-generalize*. We usually *cannot know what `this` refers to* until
+the code runs.
 
 ## `this`
 
-### Self-Referential Objects
+As you might have gathered from the last lab, one way to break up the complexity
+of a problem is by using multiple kinds of objects together, and having each
+object be responsible for representing a small part of the problem. But these
+objects don't need to exist in isolation - objects can have other objects (or
+even collections of other objects) as properties.
 
-As you might have gathered from the last lab, one way to break up the complexity of a problem is by using multiple kinds of objects together, and having each object be responsible for representing a small part of the problem. But these objects don't need to exist in isolation - objects can have other objects (or even collections of other objects) as properties.
+Suppose that we wanted to create a simple program ('RunTracker') that helps
+people prepare for running a 5k. Each day that a person runs, they create a
+record of their run which contains:
 
-Suppose that we wanted to create a simple app ('RunTracker') that helps people prepare for running a 5k. Each day that a person runs, they create a record of their run which contains
+-   the date and time of the run
+-   the distance covered, in meters
+-   the time taken, in seconds
 
-- the date and time of the run
-- the distance covered, in meters
-- the time taken, in seconds
+The program also stores information about the user: the user's name and email
+address. can perform some calculations: total distance run, longest run
+so far, and average speed.
 
-The app also stores information about the user - the user's name and email address. And it can perform some calculations - total distance run, longest run so far, average speed, and total distance run.
+## Lab: Diagram and Model
 
-Based on this problem, the kinds of abstractions that we probably want to use are Users and Runs. Why? Because each one represents a 'thing' that we can interact with, complete with attributes and behaviors. And based on how we've constructed this problem, we will presumably want our User to have an array of RunRecords that represent that user's runs.
+Using the description of the program above, create an entity diagram.
 
-```javascript
+1.  Identify the entities (kinds of objects) needed in the program.
+1.  Draw a box for each entity and label it with the singular, capitalized
+    entity name.
+1.  Connect any entities that are related using a line.
+1.  List attributes and methods of each entity separately within each entity's
+    box.
 
-// 'user'
-{
+## Demo: Write Methods With `this`
+
+```js
+let user = {
   name: "Person McFace",
   email: "wdi@personmcface.com",
   runs : [
     {
       date: "2015-05-25 15:00",
-      distance: "1200",
-      timeTaken: "600",
+      distance: 1200,
+      timeTaken: 600
+    },
+    {
+      date: "2015-05-25 15:00",
+      distance: 1400,
+      timeTaken: 800
     }
   ],
-  totalDistance : function(){ ... },
-  longestRun : function(){ ... },
-  averageSpeed : function(){ ... }
+
+  totalDistance : function() {},
+  longestRun : function() {},
+  averageSpeed : function() {}
 }
-
 ```
 
-However, when we start thinking about how the methods for 'User' will work, we run into a difficulty. A method for calculating the longest run so far needs to be able to see, and refer to, all of the Runs associated with that particular User. How do we do that?
+When we start thinking about how the methods for 'User' will work, we run into a
+difficulty. A method for calculating the longest run so far needs to be able to
+see, and refer to, all of the runs associated with that particular user. How do
+we do that?
 
-JavaScript gives us a tool for just this purpose; a special reference called `this`. In general, when called from inside some object's method, `this` refers back to that object, allowing our methods to use and manipulate other properties on the object.
+Follow along as I demonstrate how to complete writing each method.
 
-> `this` acts differently when it's _not_ used inside an object, but we won't be discussing that right now.
+## Lab: Self-Referential Objects
 
-In the specific case of our 'RunTracker' app, here's how our methods might look:
-
-```javascript
-  ...
-    totalDistance : function(){
-      var totalDist = 0;
-      for (var i = 0; i < this.runs.length; ++i) {
-        totalDist += this.runs[i].distance;
-      }
-      return totalDist;
-    },
-    longestRun : function() {
-      var longest = this.runs[0].distance;
-      for (var i = 0; i < this.runs.length; ++i) {
-        if (this.runRecords[i].distance > longest) {
-          longest = this.runs[i].distance;
-        }
-      }
-      return longest;
-    },
-    averageSpeed : function() {
-      var totalTime = 0;
-      for (var i = 0; i < this.runs.length; ++i) {
-        totalTime += this.runs[i].timeTaken;
-      }
-      if (totalTime !== 0) {
-        var totalDistance = this.totalDistance();
-        return totalDistance / totalTime;
-      } else {
-        return 0;
-      }
-    }
-  ...
-```
-
-#### Lab :: Self-Referential Objects
-
-Open up the `lib/meals.js` file. In pairs, you're going to work a similar app to the one mentioned in the example - this time for meal tracking. In particular, you're going to create an example 'User' object, complete with several 'Meals'.
+In groups, you're going to work a similar program to our previous one, this time
+for meal tracking. In particular, you're going to create an example 'User'
+object, complete with several 'Meals'.
 
 A 'User' needs to have:
-- a name (`name`)
-- an age (`age`)
-- a target daily calorie intake (`calorieTarget`)
-- a list of 'Meals' that they've eaten (`meals`)
+
+-   a name (`name`)
+-   an age (`age`)
+-   a target daily calorie intake (`calorieTarget`)
+-   a list of 'Meals' that they've eaten (`meals`)
 
 Every 'Meal' must have:
-- a title (`title`), e.g. 'breakfast', 'lunch', 'dinner')
-- a date (`date`), represented as a string e.g. "2015-06-25"
-- a description (`description`)
-- a number of estimated calories (`calories`)
 
-Then, create the following method for 'User'
-- `caloriesEatenOn`, which accepts a date (in the format above) and calculates the total number of calories consumed on that date.
-- `avgDailyCalories`, which (as indicated), calculates the average number of calories consumed per day, rounded down to the nearest whole calorie.
-- `onTrack`, which compares averageDailyCalories to the User's target daily calorie intake, and returns `true` if average caloric intake is at or below the target (or `false` if the reverse is true)
+-   a title (`title`), e.g. 'breakfast', 'lunch', 'dinner'
+-   a date (`date`), represented as a string e.g. "2015-06-25"
+-   a description (`description`)
+-   a number of estimated calories (`calories`)
 
-[License](LICENSE)
-------------------
+Then, create the following methods for your instance of a 'User':
+
+-   `caloriesEatenOn`, which accepts a date (in the format above) and calculates
+    the total number of calories consumed on that date.
+-   `avgDailyCalories`, which (as indicated), calculates the average number of
+    calories consumed per day, rounded down to the nearest whole calorie.
+-   `onTrack`, which compares averageDailyCalories to the User's target daily
+    calorie intake, and returns `true` if average caloric intake is at or below
+    the target (or `false` if the reverse is true).
+
+## [License](LICENSE)
 
 Source code distributed under the MIT license. Text and other assets copyright
 General Assembly, Inc., all rights reserved.
