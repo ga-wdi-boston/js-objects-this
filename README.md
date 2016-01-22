@@ -147,6 +147,9 @@ Then, create the following methods for your instance of a 'User':
     calorie intake, and returns `true` if average caloric intake is at or below
     the target (or `false` if the reverse is true).
 
+Add your code to [`lib/meals.js`](lib/meals.js), structured similarly to
+[`lib/runs.js`](lib/runs.js).
+
 ## [License](LICENSE)
 
 Source code distributed under the MIT license. Text and other assets copyright
