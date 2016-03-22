@@ -56,11 +56,10 @@ the code runs.
 
 ## `this`
 
-As you might have gathered from the last lab, one way to break up the complexity
-of a problem is by using multiple kinds of objects together, and having each
-object be responsible for representing a small part of the problem. But these
-objects don't need to exist in isolation - objects can have other objects (or
-even collections of other objects) as properties.
+One way to break up the complexity of a problem is by using multiple kinds of
+objects together, and having each object be responsible for representing a small
+part of the problem. But these objects don't need to exist in isolation - objects
+can have other objects (or even collections of other objects) as properties.
 
 Suppose that we wanted to create a simple program ('RunTracker') that helps
 people prepare for running a 5k. Each day that a person runs, they create a
@@ -70,9 +69,9 @@ record of their run which contains:
 -   the distance covered, in meters
 -   the time taken, in seconds
 
-The program also stores information about the user: the user's name and email
-address. can perform some calculations: total distance run, longest run
-so far, and average speed.
+The program also stores information about the user (the user's name and email
+address) and can perform some calculations (total distance run, longest run
+so far, and average speed).
 
 ## Lab: Diagram and Model
 
@@ -93,12 +92,12 @@ let user = {
   email: "wdi@personmcface.com",
   runs : [
     {
-      date: "2015-05-25 15:00",
+      date: "2016-05-25 15:00",
       distance: 1200,
       timeTaken: 600
     },
     {
-      date: "2015-05-25 15:00",
+      date: "2016-05-25 15:00",
       distance: 1400,
       timeTaken: 800
     }
@@ -119,7 +118,7 @@ Follow along as I demonstrate how to complete writing each method.
 
 ## Lab: Self-Referential Objects
 
-In groups, you're going to work a similar program to our previous one, this time
+In groups, you're going to work on a similar program to our previous one, this time
 for meal tracking. In particular, you're going to create an example 'User'
 object, complete with several 'Meals'.
 
@@ -133,7 +132,7 @@ A 'User' needs to have:
 Every 'Meal' must have:
 
 -   a title (`title`), e.g. 'breakfast', 'lunch', 'dinner'
--   a date (`date`), represented as a string e.g. "2015-06-25"
+-   a date (`date`), represented as a string e.g. "2016-06-25"
 -   a description (`description`)
 -   a number of estimated calories (`calories`)
 
