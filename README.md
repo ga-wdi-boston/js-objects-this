@@ -4,7 +4,7 @@
 
 ## Prerequisites
 
--   Creating object literals.
+-   [js-objects-modeling](https://github.com/ga-wdi-boston/js-objects-modeling)
 
 ## Objectives
 
