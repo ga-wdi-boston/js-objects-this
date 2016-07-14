@@ -11,6 +11,12 @@
 -   Contrast the defintions of "property", "attribute", and "method"
 -   From within a method, reference properties of the same object using `this`.
 
+## Preparation
+
+1.  [Fork and clone](https://github.com/ga-wdi-boston/meta/wiki/ForkAndClone)
+    this repository.
+1.  Create a new branch, `training`, for your work.
+
 ## Kinds of Properties
 
 Suppose we have the following object literal:
