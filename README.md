@@ -64,8 +64,9 @@ the code runs.
 
 One way to break up the complexity of a problem is by using multiple kinds of
 objects together, and having each object be responsible for representing a small
-part of the problem. But these objects don't need to exist in isolation - objects
-can have other objects (or even collections of other objects) as properties.
+part of the problem. But these objects don't need to exist in isolation -
+objects can have other objects (or even collections of other objects) as
+properties.
 
 Suppose that we wanted to create a simple program ('RunTracker') that helps
 people prepare for running a 5k. Each day that a person runs, they create a
@@ -124,8 +125,8 @@ Follow along as I demonstrate how to complete writing each method.
 
 ## Lab: Self-Referential Objects
 
-In groups, you're going to work on a similar program to our previous one, this time
-for meal tracking. In particular, you're going to create an example 'User'
+In groups, you're going to work on a similar program to our previous one, this
+time for meal tracking. In particular, you're going to create an example 'User'
 object, complete with several 'Meals'.
 
 A 'User' needs to have:
