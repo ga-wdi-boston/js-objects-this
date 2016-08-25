@@ -25,7 +25,7 @@ Suppose we have the following object literal:
 {
   foo: 'bar',
   baz: function() {
-    // How to I access the value stored in 'foo' above?
+    // How do I access the value stored in 'foo' above?
   }
 }
 ```
