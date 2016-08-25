@@ -1,4 +1,4 @@
-![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)
+[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
 # JavaScript Objects: Referencing Own Properties
 
@@ -25,7 +25,7 @@ Suppose we have the following object literal:
 {
   foo: 'bar',
   baz: function() {
-    // How to I access the value stored in 'foo' above?
+    // How do I access the value stored in 'foo' above?
   }
 }
 ```
@@ -64,8 +64,9 @@ the code runs.
 
 One way to break up the complexity of a problem is by using multiple kinds of
 objects together, and having each object be responsible for representing a small
-part of the problem. But these objects don't need to exist in isolation - objects
-can have other objects (or even collections of other objects) as properties.
+part of the problem. But these objects don't need to exist in isolation -
+objects can have other objects (or even collections of other objects) as
+properties.
 
 Suppose that we wanted to create a simple program ('RunTracker') that helps
 people prepare for running a 5k. Each day that a person runs, they create a
@@ -124,8 +125,8 @@ Follow along as I demonstrate how to complete writing each method.
 
 ## Lab: Self-Referential Objects
 
-In groups, you're going to work on a similar program to our previous one, this time
-for meal tracking. In particular, you're going to create an example 'User'
+In groups, you're going to work on a similar program to our previous one, this
+time for meal tracking. In particular, you're going to create an example 'User'
 object, complete with several 'Meals'.
 
 A 'User' needs to have:
@@ -157,5 +158,6 @@ Add your code to [`lib/meals.js`](lib/meals.js), structured similarly to
 
 ## [License](LICENSE)
 
-Source code distributed under the MIT license. Text and other assets copyright
-General Assembly, Inc., all rights reserved.
+1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
+1.  All software code is licensed under GNU GPLv3. For commercial use or
+    alternative licensing, please contact legal@ga.co.
