@@ -133,7 +133,7 @@ object, complete with several 'Meals'.
 A 'User' needs to have:
 
 -   a name (`name`)
--   an age (`age`)
+-   a date-of-birth (`bornOn`)
 -   a target daily calorie intake (`calorieTarget`)
 -   a list of 'Meals' that they've eaten (`meals`)
 
