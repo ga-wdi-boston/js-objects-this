@@ -157,6 +157,10 @@ Then, create the following methods for your instance of a 'User':
 Add your code to [`lib/meals.js`](lib/meals.js), structured similarly to
 [`lib/runs.js`](lib/runs.js).
 
+## Additional Resources
+
+-   [MDN this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
+
 ## [License](LICENSE)
 
 1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
