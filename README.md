@@ -16,6 +16,7 @@
 1.  [Fork and clone](https://github.com/ga-wdi-boston/meta/wiki/ForkAndClone)
     this repository.
 1.  Create a new branch, `training`, for your work.
+1.  Install dependencies with `npm install`.
 
 ## Kinds of Properties
 
