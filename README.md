@@ -16,6 +16,7 @@
 1.  [Fork and clone](https://github.com/ga-wdi-boston/meta/wiki/ForkAndClone)
     this repository.
 1.  Create a new branch, `training`, for your work.
+1.  Install dependencies with `npm install`.
 
 ## Kinds of Properties
 
@@ -132,7 +133,7 @@ object, complete with several 'Meals'.
 A 'User' needs to have:
 
 -   a name (`name`)
--   an age (`age`)
+-   a date-of-birth (`bornOn`)
 -   a target daily calorie intake (`calorieTarget`)
 -   a list of 'Meals' that they've eaten (`meals`)
 
@@ -155,6 +156,10 @@ Then, create the following methods for your instance of a 'User':
 
 Add your code to [`lib/meals.js`](lib/meals.js), structured similarly to
 [`lib/runs.js`](lib/runs.js).
+
+## Additional Resources
+
+-   [MDN this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
 
 ## [License](LICENSE)
 
