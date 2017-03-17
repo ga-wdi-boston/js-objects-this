@@ -37,7 +37,7 @@ and methods, we should prefer the term "object" over "dictionary". So, we'll
 also call the accessor name a "property" instead of a "key".
 
 `foo` is a kind of property known as an **attribute**. Attributes are properties
-point to values. On the other hand, properties that point to functions are
+that point to values. On the other hand, properties that point to functions are
 **methods**.
 
 For the remainder of this talk, we will be focusing exclusively on how we can
