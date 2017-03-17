@@ -9,7 +9,7 @@
 ## Objectives
 
 -   Contrast the defintions of "property", "attribute", and "method"
--   From within a method, reference properties of the same object using `this`.
+-   From within a method, access properties of the same object using `this`.
 
 ## Preparation
 
@@ -25,7 +25,7 @@ Suppose we have the following object literal:
 ```js
 {
   foo: 'bar',
-  baz: function() {
+  baz: function () {
     // How do I access the value stored in 'foo' above?
   }
 }
@@ -52,7 +52,7 @@ patterns used in this talk, the containing object is what `this` refers to.
 ```js
 {
   foo: 'bar',
-  baz: function() {
+  baz: function () {
     return this.foo;
   }
 }
