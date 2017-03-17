@@ -160,6 +160,8 @@ Add your code to [`lib/meals.js`](lib/meals.js), structured similarly to
 ## Additional Resources
 
 -   [MDN this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
+-   [Understand Javascript's `this` with Clarity](http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/)
+-   [This in Javascript](https://john-dugan.com/this-in-javascript/)
 
 ## [License](LICENSE)
 
