@@ -111,9 +111,9 @@ let user = {
     }
   ],
 
-  totalDistance : function() {},
-  longestRun : function() {},
-  averageSpeed : function() {}
+  totalDistance : function () {},
+  longestRun : function () {},
+  averageSpeed : function () {}
 }
 ```
 
