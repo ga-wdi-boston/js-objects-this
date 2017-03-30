@@ -9,7 +9,7 @@
 ## Objectives
 
 -   Contrast the defintions of "property", "attribute", and "method"
--   From within a method, reference properties of the same object using `this`.
+-   From within a method, access properties of the same object using `this`.
 
 ## Preparation
 
@@ -25,7 +25,7 @@ Suppose we have the following object literal:
 ```js
 {
   foo: 'bar',
-  baz: function() {
+  baz: function () {
     // How do I access the value stored in 'foo' above?
   }
 }
@@ -37,7 +37,7 @@ and methods, we should prefer the term "object" over "dictionary". So, we'll
 also call the accessor name a "property" instead of a "key".
 
 `foo` is a kind of property known as an **attribute**. Attributes are properties
-point to values. On the other hand, properties that point to functions are
+that point to values. On the other hand, properties that point to functions are
 **methods**.
 
 For the remainder of this talk, we will be focusing exclusively on how we can
@@ -52,7 +52,7 @@ patterns used in this talk, the containing object is what `this` refers to.
 ```js
 {
   foo: 'bar',
-  baz: function() {
+  baz: function () {
     return this.foo;
   }
 }
@@ -111,9 +111,9 @@ let user = {
     }
   ],
 
-  totalDistance : function() {},
-  longestRun : function() {},
-  averageSpeed : function() {}
+  totalDistance : function () {},
+  longestRun : function () {},
+  averageSpeed : function () {}
 }
 ```
 
@@ -160,6 +160,8 @@ Add your code to [`lib/meals.js`](lib/meals.js), structured similarly to
 ## Additional Resources
 
 -   [MDN this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
+-   [Understand Javascript's `this` with Clarity](http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/)
+-   [This in Javascript](https://john-dugan.com/this-in-javascript/)
 
 ## [License](LICENSE)
 
